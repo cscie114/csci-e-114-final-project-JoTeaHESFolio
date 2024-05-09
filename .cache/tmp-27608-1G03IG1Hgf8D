@@ -1,0 +1,5 @@
+
+    const cmd = require("C:/Users/jodyt/OneDrive/Desktop/csci-e-114-final-project-JoTeaHESFolio/node_modules/gatsby/dist/commands/develop-process.js");
+    const args = {"_":["develop"],"verbose":false,"no-color":false,"no-colors":false,"noColors":false,"noColor":false,"json":false,"H":"localhost","host":"localhost","p":"8000","port":8001,"c":"","cert-file":"","certFile":"","k":"","key-file":"","keyFile":"","ca-file":"","caFile":"","graphql-tracing":false,"graphqlTracing":false,"$0":"gatsby","directory":"C:\\Users\\jodyt\\OneDrive\\Desktop\\csci-e-114-final-project-JoTeaHESFolio","browserslist":[">0.25%","not dead"],"sitePackageJson":{"dependencies":{"gatsby":"^5.13.4"}},"report":{"errorMap":{}},"useYarn":false,"proxyPort":8001,"debugInfo":null};
+    cmd(args);
+  
