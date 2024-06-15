@@ -1,0 +1,83 @@
+/* src/components/farmers-market.module.css */
+/* src/components/farmers-market.module.css */
+
+.pageTitle {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.searchContainer,
+.usdaSearchContainer {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.searchInput {
+  padding: 0.5rem;
+  font-size: 1rem;
+  width: 70%;
+  max-width: 400px;
+}
+
+.searchButton {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: #4e969d;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.marketGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.marketCard {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+}
+
+.marketCard h2 {
+  margin-top: 0;
+}
+
+.marketCard p {
+  margin: 0.5rem 0;
+}
+
+.divider {
+  margin: 20px 0;
+  border: 0;
+  height: 1px;
+  background: #333;
+  background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.pagination button {
+  margin: 0 0.25rem;
+  padding: 0.5rem 1rem;
+  background-color: #4e969d;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.usdaLink {
+  text-align: center;
+}

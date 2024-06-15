@@ -1,8 +1,105 @@
 # README.md
 
+# G.R.o.W. Farmers' Market Project README
+
+## Project Overview
+
+The G.R.o.W. Farmers' Market project aims to provide information about local farmers' markets and how to get involved in working with one. This project includes search functionality for both the Notion database and the USDA database, displaying results in a card format. There are also links to external sites containing information that I developed for another class in the same subject area.
+
+## Prerequisites
+
+- Node.js and npm installed
+- Gatsby CLI installed
+- Volta for managing Node.js versions
+- Notion API key and database ID
+- Google Sheets API key and credentials
+
+## Setup Instructions
+
+1. **Clone the Repository**:
+
+   ```bash
+   git clone https://github.com/your-repo/grow-market-site.git
+   cd grow-market-site
+   ```
+
+2. **Install Dependencies**:
+
+   ```bash
+   volta install
+   npm install
+   ```
+
+3. **Configure Environment Variables**:
+   Create a `.env` file in the root directory and add the following:
+
+   ```env
+   GATSBY_NOTION_KEY=your_actual_notion_key
+   GATSBY_NOTION_PAGE_ID=your_actual_notion_page_id
+   GATSBY_GOOGLE_SHEETS_API_KEY=your_google_sheets_api_key
+   GATSBY_GOOGLE_SHEETS_SPREADSHEET_ID=your_google_sheets_spreadsheet_id
+   ```
+
+4. **Run the Development Server**:
+
+   ```bash
+   volta run gatsby develop
+   ```
+
+## Project Structure
+
+- **gatsby-config.js**: Configuration file for Gatsby, including plugins and site metadata.
+- **src/pages/farmers-market.js**: Main page component for displaying farmers' market information.
+- **src/components/layout.js**: Layout component for the project.
+- **src/utils/notion.js**: Utility functions for interacting with the Notion API.
+- **src/utils/google-sheets.js**: Utility functions for interacting with the Google Sheets API.
+
+## Usage
+
+- Navigate to `http://localhost:8000/farmers-market/` to access the farmers' market search page.
+- Use the search bar to find markets from both the Notion database and the USDA database.
+
+## Troubleshooting
+
+### Notion Database Issues
+
+1. **Check API Key and Database ID**:
+   Ensure that the Notion API key and database ID are correctly set in the `.env` file.
+
+2. **API Permissions**:
+   Verify that the Notion integration has access to the database. Check the Notion settings and share the database with the integration.
+
+3. **Network Issues**:
+   Ensure you have a stable internet connection and that there are no network issues preventing API calls.
+
+### USDA Database Issues
+
+1. **Check API Key**:
+   Ensure that the USDA API key is correctly set in the `.env` file.
+
+2. **API Endpoint**:
+   Verify that the USDA API endpoint is correct and that the API is functioning. Note that the USDA API is under redevelopment and may experience disruptions.
+
+3. **Data Formatting**:
+   Ensure that the data fetched from the USDA API is correctly formatted and parsed before rendering.
+
+## Additional Resources
+
+- [Gatsby Documentation](https://www.gatsbyjs.com/docs/)
+- [Notion API Documentation](https://developers.notion.com/)
+- [Google Sheets API Documentation](https://developers.google.com/sheets/api)
+
+## Contact
+
+For any questions or issues, please contact [your-email@example.com].
+
+---
+
+This README provides a comprehensive overview of the project setup, usage, and troubleshooting steps to help you successfully run and maintain the G.R.o.W. Farmers' Market project.
+
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/NGGI9_Zk)
 
-## Final Project
+## Final Project Design
 
 Your README.md file should have:
 

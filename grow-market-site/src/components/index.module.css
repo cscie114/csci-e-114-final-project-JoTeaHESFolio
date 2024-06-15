@@ -1,13 +1,29 @@
+/* src/components/index.module.css */
+
+.headerContainer {
+  text-align: center;
+}
+
+.centeredText {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 80%;
+}
+
+.logo {
+  max-width: 100px;
+  margin-right: var(--space-3);
+}
+
 .list {
   display: grid;
   margin: 0;
-  /* https://css-tricks.com/responsive-layouts-fewer-media-queries/ */
   --w: 280px;
   --n: 2;
   gap: var(--size-gap);
   grid-template-columns: repeat(
     auto-fit,
-    minmax(max(var(--w), 100%/ (var(--n) + 1) + 0.1%), 1fr)
+    minmax(max(var(--w), 100% / (var(--n) + 1) + 0.1%), 1fr)
   );
   margin-bottom: var(--size-gap);
   margin-top: var(--size-gap);
@@ -15,6 +31,7 @@
 
 .listItem {
   margin: 0;
+  text-align: left; /* Ensure text is left-aligned */
 }
 
 .listItem::marker {
@@ -34,12 +51,12 @@
 }
 
 .listItemLink {
-  color: #4e969d; /* Change link color to brand color */
+  color: #4e969d;
   font-weight: bold;
 }
 
 .listItemDescription {
-  color: #000000; /* Change description color to black */
+  color: #000000;
   margin-bottom: 0;
   margin-top: var(--space-1);
 }
@@ -51,4 +68,17 @@
 .intro {
   max-width: none;
   line-height: var(--line-height-loose);
+}
+
+.signupLink {
+  display: block;
+  margin-top: var(--space-3);
+  color: #4e969d;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+}
+
+.signupLink:hover {
+  text-decoration: underline;
 }

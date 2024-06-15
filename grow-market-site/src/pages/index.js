@@ -1,3 +1,4 @@
+// src/pages/index.js
 import * as React from "react"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
@@ -25,40 +26,49 @@ const links = [
     description:
       "Watch our welcome video to get a feel for what the G.R.o.W. Farmers' Market offers.",
   },
+  {
+    text: "Find a Farmers' Market",
+    url: "/find-farmers-market",
+    description:
+      "Not in the Savannah area? Find a farmers' market near you! Shop local and support the farmers in your community.",
+  },
 ]
 
 const IndexPage = () => (
   <Layout>
     <Seo title="Home" />
-    <div className={styles.textCenter}>
-      <StaticImage
-        src="../images/grow_market_banner.png"
-        alt="G.R.o.W. Farmers' Market Banner"
-        style={{ marginBottom: `var(--space-3)` }}
-      />
-      <h1>Welcome to G.R.o.W. Farmers' Market!</h1>
-      <p className={styles.intro}>
+    <div className={styles.headerContainer}>
+      <h1 className={styles.centeredText}>
+        Welcome to G.R.o.W. Farmers' Market!
+      </h1>
+      <p className={styles.centeredText}>
         Discover local produce and handmade goods at our community-driven
         market. Explore our resources to learn more!
       </p>
-      <ul className={styles.list}>
-        {links.map(link => (
-          <li key={link.url} className={styles.listItem}>
-            <a
-              className={styles.listItemLink}
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {link.text}
-            </a>
-            <p className={styles.listItemDescription}>{link.description}</p>
-          </li>
-        ))}
-      </ul>
-      <Link to="/signup">Sign Up to Participate</Link>{" "}
-      {/* add Google form link */}
     </div>
+    <StaticImage
+      src="../images/grow_market_banner.png"
+      alt="G.R.o.W. Farmers' Market Banner"
+      style={{ marginBottom: `var(--space-3)` }}
+    />
+    <ul className={styles.list}>
+      {links.map(link => (
+        <li key={link.url} className={styles.listItem}>
+          <a
+            className={styles.listItemLink}
+            href={link.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {link.text}
+          </a>
+          <p className={styles.listItemDescription}>{link.description}</p>
+        </li>
+      ))}
+    </ul>
+    <Link to="/signup" className={styles.signupLink}>
+      Sign Up to Participate
+    </Link>
   </Layout>
 )
 

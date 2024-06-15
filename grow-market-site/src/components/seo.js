@@ -1,7 +1,9 @@
-import * as React from "react"
+import React from "react"
+import PropTypes from "prop-types"
+import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-function Seo({ description, title, lang = "en", meta = [], children }) {
+const SEO = ({ description, lang, meta, title }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -9,11 +11,8 @@ function Seo({ description, title, lang = "en", meta = [], children }) {
           siteMetadata {
             title
             description
-            author
             social {
-              instagram
-              facebook
-              youtube
+              twitter
             }
           }
         }
@@ -25,26 +24,61 @@ function Seo({ description, title, lang = "en", meta = [], children }) {
   const defaultTitle = site.siteMetadata?.title
 
   return (
-    <>
-      <html lang={lang} />
-      <title>{title ? `${title} | ${defaultTitle}` : defaultTitle}</title>
-      <meta name="description" content={metaDescription} />
-      <meta property="og:title" content={title || defaultTitle} />
-      <meta property="og:description" content={metaDescription} />
-      <meta property="og:type" content="website" />
-      <meta name="og:image" content="/grow-logo.png" />
-      <meta property="og:url" content={site.siteMetadata.url} />
-      <meta name="facebook:card" content="summary_large_image" />
-      <meta
-        name="facebook:creator"
-        content={site.siteMetadata.social.facebook}
-      />
-      <meta name="facebook:title" content={title || defaultTitle} />
-      <meta name="facebook:description" content={metaDescription} />
-      <link rel="icon" href="/favicon.ico" />
-      {children}
-    </>
+    <Helmet
+      htmlAttributes={{
+        lang,
+      }}
+      title={title}
+      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
+      meta={[
+        {
+          name: `description`,
+          content: metaDescription,
+        },
+        {
+          property: `og:title`,
+          content: title,
+        },
+        {
+          property: `og:description`,
+          content: metaDescription,
+        },
+        {
+          property: `og:type`,
+          content: `website`,
+        },
+        {
+          name: `twitter:card`,
+          content: `summary`,
+        },
+        {
+          name: `twitter:creator`,
+          content: site.siteMetadata?.social?.twitter || ``,
+        },
+        {
+          name: `twitter:title`,
+          content: title,
+        },
+        {
+          name: `twitter:description`,
+          content: metaDescription,
+        },
+      ].concat(meta)}
+    />
   )
 }
 
-export default Seo
+SEO.defaultProps = {
+  lang: `en`,
+  meta: [],
+  description: ``,
+}
+
+SEO.propTypes = {
+  description: PropTypes.string,
+  lang: PropTypes.string,
+  meta: PropTypes.arrayOf(PropTypes.object),
+  title: PropTypes.string.isRequired,
+}
+
+export default SEO

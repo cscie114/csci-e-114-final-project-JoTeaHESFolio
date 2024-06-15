@@ -1,4 +1,7 @@
-// @type {import('gatsby').GatsbyConfig}
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `G.R.o.W. Farmers' Market`,
@@ -10,9 +13,15 @@ module.exports = {
     facebook: `https://www.facebook.com/growfarmersmarket/`,
     tiktok: `https://www.tiktok.com/@growfarmersmarket`,
     email: `growfarmersmarket@gmail.com`,
+    social: {
+      twitter: `@growfarmersmarket`,
+    },
   },
   plugins: [
+    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -20,8 +29,6 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -29,11 +36,8 @@ module.exports = {
         short_name: `G.R.o.W.`,
         start_url: `/`,
         background_color: `#319197`,
-        // This will impact how browsers show your PWA/website
-        // https://css-tricks.com/meta-theme-color-and-trickery/
-        // theme_color: `#319197`,
         display: `minimal-ui`,
-        icon: `src/images/grow-logo.png`, // This path is relative to the root of the site.
+        icon: `src/images/grow-logo.png`,
       },
     },
   ],

@@ -1,18 +1,24 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "grow-market-site",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Helping farmers grow their business by connecting them with local markets.",
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@babel/core": "^7.24.7",
+    "@syneki/notion-cms": "^1.0.0",
+    "@syneki/notion-renderer": "^1.0.0-pre.1",
     "gatsby": "^5.13.3",
     "gatsby-plugin-image": "^3.13.1",
     "gatsby-plugin-manifest": "^5.13.1",
+    "gatsby-plugin-react-helmet": "^6.13.1",
     "gatsby-plugin-sharp": "^5.13.1",
     "gatsby-source-filesystem": "^5.13.1",
+    "gatsby-source-notion-api": "^0.12.0",
     "gatsby-transformer-sharp": "^5.13.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-helmet": "^6.1.0"
   },
   "devDependencies": {
     "prettier": "^2.8.8"

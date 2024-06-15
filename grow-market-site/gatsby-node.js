@@ -16,3 +16,14 @@ exports.createPages = async ({ actions }) => {
     defer: true,
   })
 }
+
+exports.onCreateWebpackConfig = ({ stage, actions }) => {
+  if (stage === "develop") {
+    actions.setWebpackConfig({
+      devServer: {
+        hot: false,
+        inline: true,
+      },
+    })
+  }
+}

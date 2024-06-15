@@ -1,4 +1,5 @@
-import * as React from "react"
+import React from "react"
+import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import "./layout.css"
@@ -16,31 +17,31 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header
-        siteTitle={data.site.siteMetadata?.title || "G.R.o.W. Farmers' Market"}
-      />
+      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div
         style={{
           margin: `0 auto`,
-          maxWidth: `960px`, // Adjusted for standard screen size
-          padding: `1.0875rem 1.45rem`, // Standard padding; tweak as needed
+          maxWidth: 960,
+          padding: `0 1.0875rem 1.45rem`,
         }}
       >
         <main>{children}</main>
         <footer
           style={{
-            marginTop: `2rem`, // Provides consistent spacing
-            fontSize: `0.875rem`, // Smaller font size for footer
+            marginTop: `2rem`,
           }}
         >
-          © {new Date().getFullYear()}, G.R.o.W. Farmers' Market &middot; All
-          rights reserved.
-          <br />
-          Built with <a href="https://www.gatsbyjs.com">Gatsby</a>
+          © {new Date().getFullYear()}, Built with
+          {` `}
+          <a href="https://www.gatsbyjs.com">Gatsby</a>
         </footer>
       </div>
     </>
   )
+}
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
 }
 
 export default Layout

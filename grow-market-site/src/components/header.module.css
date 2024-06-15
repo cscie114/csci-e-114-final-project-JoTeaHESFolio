@@ -1,0 +1,61 @@
+/* src/components/header.module.css */
+
+.header {
+  background: #f35521; /* Updated background color */
+  padding: 1rem;
+}
+
+.headerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  margin: 0;
+  color: white;
+}
+
+.title a {
+  color: white;
+  text-decoration: none;
+}
+
+.logo {
+  max-width: 100px;
+}
+
+.menuButton {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.menu {
+  margin-top: 1rem;
+  background: white;
+  border: 1px solid #ddd;
+}
+
+.menuList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menuItem {
+  border-bottom: 1px solid #ddd;
+}
+
+.menuItem a {
+  display: block;
+  padding: 1rem;
+  color: #f35521;
+  text-decoration: none;
+}
+
+.menuItem a:hover {
+  background: #f8f8f8;
+}
